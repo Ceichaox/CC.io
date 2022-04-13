@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" sizes="any" mask="" href="./../image/icon/icon-b.png" >
+    <title>C</title>
+    
+    <link rel="stylesheet" type="text/css" href="./../../css/timeline.css">
+    <script src="./../../js/three.js"></script>
+    <script src="./../../js/OrbitControls.js"></script>
+    <script src="./../../js/stats.min.js"></script>
+</head>
+<body>
+    <div id="timeline-background">
+    <div id="timeline-left">
+        <a id="timeline-title" >timeline</a>
+        <img id="warnning-line-w"  src="./../../image/icon/warnning-line.png">
+        <img id="warnning-line-h"  src="./../../image/icon/warnning-line.png">
+        
+    
+    <div id="timeline-produce">
+        <h1>Ceichaos</h1>
+        <h3>职业：设计师</h3>
+        <h3>爱好：健身、破译、游戏</h3>
+        <h3>项目联系：17862979937</h3>
+        <h2>写在最后</h2>
+        <h3>很高兴能分享自己的思维</h3>
+        <h3>也期待与当下的你共同合作开发新项目</h3> 
+        <h3>另外也在寻求更能展现自己广阔天地</h3>
+        
+    </div>
+    <button id="timeline-backbutton" onclick="back()">back</button>
+    
+</div>
+<div id="timeline-area-hidden">
+    <div id="timeline-area">
+        
+            <div id="timeline-line"></div>
+            <div id="timeline-timekey"></div>
+            
+        
+        <div id="timeline-timechart" >
+            
+                   
+                <div>
+                    
+                    <a><h3 id="2020-07-07">2020-07-07</h3>
+<p>ceichaos</p>
+<h3 id="2022-01-05">2022-01-05</h3>
+<p>有人</p>
+</a>
+                </div>
+                    
+                
+        </div>
+        <div id="timeline-right" >
+            <img src="" >    
+        </div>
+       
+    </div>
+</div>
+</div>
+<script>
+    function back(){
+        window.location.href = "../../";
+    };
+
+</script>
+<script>
+     
+
+     var scene = new THREE.Scene();
+    
+
+
+
+    var earthgeometry = new THREE.SphereGeometry(100,100,100);
+
+    var texture = new THREE.TextureLoader().load( '../image/js-earth-i.png' );
+    var earthmaterial = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+    
+    map: texture,
+    side: THREE.DoubleSide,
+     transparent: true,
+    
+  }); 
+
+    var earth =  new THREE.Mesh(earthgeometry, earthmaterial);
+
+    scene.add(earth);    
+
+
+var earthogeometry = new THREE.SphereGeometry(120,100,100);
+
+var otexture = new THREE.TextureLoader().load( '../image/js-earth-o.png' );
+var earthomaterial = new THREE.MeshBasicMaterial({
+color: 0xffffff,
+
+map: otexture,
+side: THREE.DoubleSide,
+ transparent: true,
+ opacity:0.5,
+
+}); 
+
+var eartho =  new THREE.Mesh(earthogeometry, earthomaterial);
+
+scene.add(eartho);   
+
+    
+
+    
+    var point = new THREE.PointLight(0xffffff);
+    point.position.set(400, 200, 300); 
+    scene.add(point); 
+    
+    var ambient = new THREE.AmbientLight(0x444444);
+    scene.add(ambient);
+ 
+    
+
+    var width = window.innerWidth; 
+    var height = window.innerHeight; 
+    var k = width / height; 
+    var s = 200; 
+    
+    var camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);
+    camera.position.set(200, 0, 200); 
+    
+    camera.lookAt(scene.position); 
+    
+
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(width, height);
+    renderer.domElement.id = 'timeline-earth';
+    
+    
+    document.body.appendChild(renderer.domElement); 
+
+function rotatequest(){
+    
+    var sk = setInterval(function huoqu(){
+    var sk = document.getElementById('timeline-area').scrollTop;
+    earth.rotation.set(0,0.007*sk,0);
+    eartho.rotation.set(0,0.007*sk,0);
+    renderer.render(scene, camera);
+    } ,30);
+   
+}
+
+    
+    function render (){
+        
+    renderer.render(scene, camera);
+    requestAnimationFrame(render);
+    
+    } 
+   
+    rotatequest();
+    render();
+
+</script>
+</body>
+</html>

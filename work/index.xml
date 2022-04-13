@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Works on blog</title>
+    <link>/work/</link>
+    <description>Recent content in Works on blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jan 2022 09:45:52 +0800</lastBuildDate><atom:link href="/work/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2</title>
+      <link>/work/project/project2/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/work/project/project2/</guid>
+      <description>page2 page2</description>
+    </item>
+    
+    <item>
+      <title>3</title>
+      <link>/work/project/project3/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/work/project/project3/</guid>
+      <description>work2 work2</description>
+    </item>
+    
+    <item>
+      <title>1</title>
+      <link>/work/project/project1/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/project/project1/</guid>
+      <description>测试 1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+11
+1
+1
+1
+1
+1
+11
+1
+1
+1
+1
+1</description>
+    </item>
+    
+    <item>
+      <title>4</title>
+      <link>/work/project/project4/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/project/project4/</guid>
+      <description>列表 列表</description>
+    </item>
+    
+    <item>
+      <title>4</title>
+      <link>/work/project/project5/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/project/project5/</guid>
+      <description>列表 列表</description>
+    </item>
+    
+    <item>
+      <title>mmd1</title>
+      <link>/work/mmd/mmd1/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/mmd/mmd1/</guid>
+      <description>列表 列表</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog</title>
+    <link>/</link>
+    <description>Recent content on blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jan 2022 09:45:52 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2</title>
+      <link>/work/project/project2/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/work/project/project2/</guid>
+      <description>page2 page2</description>
+    </item>
+    
+    <item>
+      <title>3</title>
+      <link>/work/project/project3/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/work/project/project3/</guid>
+      <description>work2 work2</description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>/blog/blog2/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/blog/blog2/</guid>
+      <description>1231 123</description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>/blog/blog3/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/blog/blog3/</guid>
+      <description>1231 123</description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>/blog/blog4/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/blog/blog4/</guid>
+      <description>1231 123</description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>/blog/blog5/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/blog/blog5/</guid>
+      <description>1231 123</description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>/blog/blog6/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/blog/blog6/</guid>
+      <description>1231 123</description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>/blog/blog7/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/blog/blog7/</guid>
+      <description>1231 123</description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>/blog/blog8/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
+      
+      <guid>/blog/blog8/</guid>
+      <description>1231 123</description>
+    </item>
+    
+    <item>
+      <title>1</title>
+      <link>/work/project/project1/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/project/project1/</guid>
+      <description>测试 1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+11
+1
+1
+1
+1
+1
+11
+1
+1
+1
+1
+1</description>
+    </item>
+    
+    <item>
+      <title>4</title>
+      <link>/work/project/project4/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/project/project4/</guid>
+      <description>列表 列表</description>
+    </item>
+    
+    <item>
+      <title>4</title>
+      <link>/work/project/project5/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/project/project5/</guid>
+      <description>列表 列表</description>
+    </item>
+    
+    <item>
+      <title>mmd1</title>
+      <link>/work/mmd/mmd1/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/mmd/mmd1/</guid>
+      <description>列表 列表</description>
+    </item>
+    
+    <item>
+      <title>myself</title>
+      <link>/timeline/myself/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/timeline/myself/</guid>
+      <description>2020-07-07 ceichaos
+2022-01-05 有人</description>
+    </item>
+    
+    <item>
+      <title>post1</title>
+      <link>/blog/blog1/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/blog/blog1/</guid>
+      <description>post1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1 1
+1
+1
+1</description>
+    </item>
+    
+  </channel>
+</rss>
