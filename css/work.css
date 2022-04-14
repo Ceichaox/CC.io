@@ -167,6 +167,10 @@ margin-top: 5vh;
     display: block;
 }
 
+.work-doucument-text {
+    margin-top: 20px;
+}
+
 /* work-detail */
 
 #work-detail-backbutton {

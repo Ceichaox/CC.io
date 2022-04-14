@@ -8,90 +8,60 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Jan 2022 09:45:52 +0800</lastBuildDate><atom:link href="/work/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2</title>
-      <link>/work/project/project2/</link>
+      <title>可视化地球编辑器计划</title>
+      <link>/work/project/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9C%B0%E7%90%83%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%A1%E5%88%92/</link>
       <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
       
-      <guid>/work/project/project2/</guid>
-      <description>page2 page2</description>
+      <guid>/work/project/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9C%B0%E7%90%83%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%A1%E5%88%92/</guid>
+      <description>页面设计已完成
+代码初步编译中</description>
     </item>
     
     <item>
-      <title>3</title>
-      <link>/work/project/project3/</link>
+      <title>崩坏3格斗计划</title>
+      <link>/work/project/%E5%B4%A9%E5%9D%8F3%E6%A0%BC%E6%96%97%E8%AE%A1%E5%88%92/</link>
       <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
       
-      <guid>/work/project/project3/</guid>
-      <description>work2 work2</description>
+      <guid>/work/project/%E5%B4%A9%E5%9D%8F3%E6%A0%BC%E6%96%97%E8%AE%A1%E5%88%92/</guid>
+      <description>未开始</description>
     </item>
     
     <item>
-      <title>1</title>
-      <link>/work/project/project1/</link>
+      <title>原神blender大电影计划</title>
+      <link>/work/project/%E5%8E%9F%E7%A5%9Eblender%E5%A4%A7%E7%94%B5%E5%BD%B1%E8%AE%A1%E5%88%92/</link>
       <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
       
-      <guid>/work/project/project1/</guid>
-      <description>测试 1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-11
-1
-1
-1
-1
-1
-11
-1
-1
-1
-1
-1</description>
+      <guid>/work/project/%E5%8E%9F%E7%A5%9Eblender%E5%A4%A7%E7%94%B5%E5%BD%B1%E8%AE%A1%E5%88%92/</guid>
+      <description>未开始</description>
     </item>
     
     <item>
-      <title>4</title>
-      <link>/work/project/project4/</link>
+      <title>微软js人工智能模拟开发计划</title>
+      <link>/work/project/%E5%BE%AE%E8%BD%AFjs%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A8%A1%E6%8B%9F%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92/</link>
       <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
       
-      <guid>/work/project/project4/</guid>
-      <description>列表 列表</description>
+      <guid>/work/project/%E5%BE%AE%E8%BD%AFjs%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A8%A1%E6%8B%9F%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92/</guid>
+      <description>未开始</description>
     </item>
     
     <item>
-      <title>4</title>
-      <link>/work/project/project5/</link>
+      <title>新vuepress虚拟交互博客构建计划</title>
+      <link>/work/project/%E6%96%B0vuepress%E8%99%9A%E6%8B%9F%E4%BA%A4%E4%BA%92%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E8%AE%A1%E5%88%92/</link>
       <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
       
-      <guid>/work/project/project5/</guid>
-      <description>列表 列表</description>
+      <guid>/work/project/%E6%96%B0vuepress%E8%99%9A%E6%8B%9F%E4%BA%A4%E4%BA%92%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E8%AE%A1%E5%88%92/</guid>
+      <description>新博客vuepress已经构建基本框架100%
+页面设计10%
+模型制作完成0%</description>
     </item>
     
     <item>
-      <title>mmd1</title>
-      <link>/work/mmd/mmd1/</link>
+      <title>校服胡桃</title>
+      <link>/work/mmd/%E6%A0%A1%E6%9C%8D%E8%83%A1%E6%A1%83/</link>
       <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
       
-      <guid>/work/mmd/mmd1/</guid>
-      <description>列表 列表</description>
+      <guid>/work/mmd/%E6%A0%A1%E6%9C%8D%E8%83%A1%E6%A1%83/</guid>
+      <description>正在制作中 头发完成30%</description>
     </item>
     
   </channel>

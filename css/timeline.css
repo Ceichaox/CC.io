@@ -41,6 +41,10 @@ span {
     
 }
 
+p {
+    margin-top: 5px;
+    line-height: 32px;
+}
 @font-face {
     font-family: HiJack-2;
     src: url('../font/HiJack-2.ttf');   
@@ -157,10 +161,15 @@ span {
     float: left;
     width: 40vw;
     margin-left: 1vw;
-    margin-top: 0vh;
-    font-size: 20px;
+    margin-top: -2vh;
+    font-size: 18px;
     font-family: SourceHanSansCN-Bold;
 
+}
+
+#timeline-timechart-text {
+    line-height: 20px;
+    margin-top: 10px;
 }
 
 #timeline-right {

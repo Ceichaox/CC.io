@@ -8,33 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Jan 2022 09:45:52 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2</title>
-      <link>/work/project/project2/</link>
-      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
-      
-      <guid>/work/project/project2/</guid>
-      <description>page2 page2</description>
-    </item>
-    
-    <item>
-      <title>3</title>
-      <link>/work/project/project3/</link>
-      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
-      
-      <guid>/work/project/project3/</guid>
-      <description>work2 work2</description>
-    </item>
-    
-    <item>
-      <title>post</title>
-      <link>/blog/blog2/</link>
-      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
-      
-      <guid>/blog/blog2/</guid>
-      <description>1231 123</description>
-    </item>
-    
-    <item>
       <title>post</title>
       <link>/blog/blog3/</link>
       <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
@@ -89,72 +62,44 @@
     </item>
     
     <item>
-      <title>1</title>
-      <link>/work/project/project1/</link>
-      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      <title>代码实现ps切换工具</title>
+      <link>/blog/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0ps%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
       
-      <guid>/work/project/project1/</guid>
-      <description>测试 1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-11
-1
-1
-1
-1
-1
-11
-1
-1
-1
-1
-1</description>
+      <guid>/blog/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0ps%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7/</guid>
+      <description>在下最近在研究制作ps的扩展插件，由于工作原因，设计使用ps较多，但是手动处理倒角还是比较麻烦，所以想开发了一款倒角用的小扩展插件，减少一下工作量，到网上找了些有关ps插件制作的教程，先实现一下ps的一个工具切换的小功能
+要求：点击切换ps使用工具
+Ps插件扩展制作教程可以看这篇文档 点击跳转 http://nullice.com/archives/1795 
+调试工具：adobe extendscript toolkit CC
+选中ps，贴jsx代码运行调试
+Jsx代码 function creatrectangle(){ (function select_51773071()	//创建函数  { try { var d = new ActionDescriptor(); var r = new ActionReference(); r.putClass(stringIDToTypeID(&amp;#34;rectangleTool&amp;#34;));//矩形工具选中  d.putReference(stringIDToTypeID(&amp;#34;null&amp;#34;), r); d.putBoolean(stringIDToTypeID(&amp;#34;dontRecord&amp;#34;), true); d.putBoolean(stringIDToTypeID(&amp;#34;forceNotify&amp;#34;), true); executeAction(stringIDToTypeID(&amp;#34;select&amp;#34;), d, DialogModes.NO); } catch (e) { if (e.number!=8007) { alert(&amp;#34;Line: &amp;#34;+e.line+&amp;#34;\n\n&amp;#34;+e,&amp;#34;Bug!&amp;#34;,true); throw(e); } } } )(); } 这时候， 在ps程序中就可以看到工具切换到矩形工具了
+那其他工具要怎么才能切换呢
+可以根据ps中的对应命令来更换工具代码，这样就可以实现工具的切换选择
+如果找不到对应的代码可以用监听器对ps进行监听，找到对应的工具id也是可以实现的
+通过ps官方监听器
+或者
+都可以对ps中的命令进行监听，并反馈
+Ps中的命令可以查看这篇文档 点击跳转 https://gitee.com/code_yu/photoshop-javascript#layercomps-layercomps 
+如果想要制作一个在ps中切换工具的cep扩展插件应该怎么做</description>
     </item>
     
     <item>
-      <title>4</title>
-      <link>/work/project/project4/</link>
-      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      <title>可视化地球编辑器计划</title>
+      <link>/work/project/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9C%B0%E7%90%83%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
       
-      <guid>/work/project/project4/</guid>
-      <description>列表 列表</description>
+      <guid>/work/project/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9C%B0%E7%90%83%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%A1%E5%88%92/</guid>
+      <description>页面设计已完成
+代码初步编译中</description>
     </item>
     
     <item>
-      <title>4</title>
-      <link>/work/project/project5/</link>
-      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      <title>崩坏3格斗计划</title>
+      <link>/work/project/%E5%B4%A9%E5%9D%8F3%E6%A0%BC%E6%96%97%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
       
-      <guid>/work/project/project5/</guid>
-      <description>列表 列表</description>
-    </item>
-    
-    <item>
-      <title>mmd1</title>
-      <link>/work/mmd/mmd1/</link>
-      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
-      
-      <guid>/work/mmd/mmd1/</guid>
-      <description>列表 列表</description>
+      <guid>/work/project/%E5%B4%A9%E5%9D%8F3%E6%A0%BC%E6%96%97%E8%AE%A1%E5%88%92/</guid>
+      <description>未开始</description>
     </item>
     
     <item>
@@ -163,35 +108,60 @@
       <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
       
       <guid>/timeline/myself/</guid>
-      <description>2020-07-07 ceichaos
-2022-01-05 有人</description>
+      <description>2021-12-08 博客构建基本构建完成
+2022-01-15 整理修正了一些hugo博客的bug，解决分页问题，hugo本身分页逻辑需要重加载，评论需要集成插件，搜索功能暂时要借助其他页内插件，寻找集成到一起的方法</description>
     </item>
     
     <item>
-      <title>post1</title>
-      <link>/blog/blog1/</link>
+      <title>TEST-用css实现矩形扩散动画效果制作一个简约科技按钮</title>
+      <link>/blog/test-%E7%94%A8css%E5%AE%9E%E7%8E%B0%E7%9F%A9%E5%BD%A2%E6%89%A9%E6%95%A3%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E7%BA%A6%E7%A7%91%E6%8A%80%E6%8C%89%E9%92%AE/</link>
       <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
       
-      <guid>/blog/blog1/</guid>
-      <description>post1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1 1
-1
-1
-1</description>
+      <guid>/blog/test-%E7%94%A8css%E5%AE%9E%E7%8E%B0%E7%9F%A9%E5%BD%A2%E6%89%A9%E6%95%A3%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E7%BA%A6%E7%A7%91%E6%8A%80%E6%8C%89%E9%92%AE/</guid>
+      <description>测试目的：用css实现矩形扩散动画效果简单实现一个简约科技按钮
+前几天在网上找漂亮的功能组件时看见有人用css实现圆形的具有波纹扩散动画效果的按钮，效果挺好看的，但是作为设计作者觉得矩形的过渡棱角科技感更饱满一些，所以作者借助这种思路用css简单的实现了一个矩形扩散的按钮运用在自己的项目中，顺便拿出来分享一下思路。
+解决对象是按下的前后的一个动画的变化效果
+当按钮按下时光环会从贴近按钮的边缘向外扩散，然后消失，给人一种科技波纹的效果
+这里附上代码
+.button { width: 50px; height: 50px; display: inline-block; background: linear-gradient(45deg,#00eaff,#006aff) ; color: #fff; border-radius: 5px; border: none; cursor: pointer; position: relative; box-shadow: 0 2px 25px rgba(0, 234, 250, 0.5); outline: 0; } .button:active { transform: scale(0.95); box-shadow: 0 2px 25px rgba(0, 234, 255, 0.5); } .button::before{ width: 45px; height: 45px; border-radius: 5px; border: 2px solid rgba(0, 234, 250, 0.5); position:absolute; z-index: -1; content: &amp;#39;&amp;#39;; left: 0px; right: 0px; top: 0px; bottom: 0px; animation: bubble 0.</description>
+    </item>
+    
+    <item>
+      <title>原神blender大电影计划</title>
+      <link>/work/project/%E5%8E%9F%E7%A5%9Eblender%E5%A4%A7%E7%94%B5%E5%BD%B1%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/project/%E5%8E%9F%E7%A5%9Eblender%E5%A4%A7%E7%94%B5%E5%BD%B1%E8%AE%A1%E5%88%92/</guid>
+      <description>未开始</description>
+    </item>
+    
+    <item>
+      <title>微软js人工智能模拟开发计划</title>
+      <link>/work/project/%E5%BE%AE%E8%BD%AFjs%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A8%A1%E6%8B%9F%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/project/%E5%BE%AE%E8%BD%AFjs%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A8%A1%E6%8B%9F%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92/</guid>
+      <description>未开始</description>
+    </item>
+    
+    <item>
+      <title>新vuepress虚拟交互博客构建计划</title>
+      <link>/work/project/%E6%96%B0vuepress%E8%99%9A%E6%8B%9F%E4%BA%A4%E4%BA%92%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/project/%E6%96%B0vuepress%E8%99%9A%E6%8B%9F%E4%BA%A4%E4%BA%92%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E8%AE%A1%E5%88%92/</guid>
+      <description>新博客vuepress已经构建基本框架100%
+页面设计10%
+模型制作完成0%</description>
+    </item>
+    
+    <item>
+      <title>校服胡桃</title>
+      <link>/work/mmd/%E6%A0%A1%E6%9C%8D%E8%83%A1%E6%A1%83/</link>
+      <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
+      
+      <guid>/work/mmd/%E6%A0%A1%E6%9C%8D%E8%83%A1%E6%A1%83/</guid>
+      <description>正在制作中 头发完成30%</description>
     </item>
     
   </channel>

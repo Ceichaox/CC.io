@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" sizes="any" mask="" href="../../image/icon/icon-b.png" >
+    <title>C</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../css/blog.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body >
+    
+    
+
+    
+    <div >
+        
+        
+        <div >
+        <button id="blog-detail-backbutton" onclick="back()">back</button>
+        <img  id="blog-blog" src="../../image/icon/blog-blog.png">
+        <img  id="blog-warnningline" src="../../image/icon/warnning-line.png">
+        </div>
+        <div class="blog-hidden">
+        <div class="blog-text">
+        <h2 class="blog-text-title">代码实现ps切换工具</h2>
+        <br>
+        <div class="blog-text-text"><p>在下最近在研究制作ps的扩展插件，由于工作原因，设计使用ps较多，但是手动处理倒角还是比较麻烦，所以想开发了一款倒角用的小扩展插件，减少一下工作量，到网上找了些有关ps插件制作的教程，先实现一下ps的一个工具切换的小功能</p>
+<p>要求：点击切换ps使用工具</p>
+<h3 id="ps插件扩展制作教程可以看这篇文档">Ps插件扩展制作教程可以看这篇文档</h3>
+<p><a href="http://nullice.com/archives/1795"> <!-- raw HTML omitted --> 点击跳转 http://nullice.com/archives/1795 <!-- raw HTML omitted --></a></p>
+<p>调试工具：adobe extendscript toolkit CC</p>
+<p><img src="../../blogimage/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0ps%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7/8401507fe9524772b40958a17ec3f0a6.png" alt="" title="效果"></p>
+<p>选中ps，贴jsx代码运行调试</p>
+<p><img src="../../blogimage/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0ps%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7/1963286154e34d52ad85b7d94d3b524c.png" alt="" title="效果"></p>
+<h3 id="jsx代码">Jsx代码</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">creatrectangle</span>(){
+	 (<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">select_51773071</span>()	<span style="color:#75715e">//创建函数
+</span><span style="color:#75715e"></span>    {
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActionDescriptor</span>();
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActionReference</span>();
+        <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">putClass</span>(<span style="color:#a6e22e">stringIDToTypeID</span>(<span style="color:#e6db74">&#34;rectangleTool&#34;</span>));<span style="color:#75715e">//矩形工具选中
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">putReference</span>(<span style="color:#a6e22e">stringIDToTypeID</span>(<span style="color:#e6db74">&#34;null&#34;</span>), <span style="color:#a6e22e">r</span>);
+        <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">putBoolean</span>(<span style="color:#a6e22e">stringIDToTypeID</span>(<span style="color:#e6db74">&#34;dontRecord&#34;</span>), <span style="color:#66d9ef">true</span>);
+        <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">putBoolean</span>(<span style="color:#a6e22e">stringIDToTypeID</span>(<span style="color:#e6db74">&#34;forceNotify&#34;</span>), <span style="color:#66d9ef">true</span>);
+        <span style="color:#a6e22e">executeAction</span>(<span style="color:#a6e22e">stringIDToTypeID</span>(<span style="color:#e6db74">&#34;select&#34;</span>), <span style="color:#a6e22e">d</span>, <span style="color:#a6e22e">DialogModes</span>.<span style="color:#a6e22e">NO</span>);
+        }
+    <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) { <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">number</span><span style="color:#f92672">!=</span><span style="color:#ae81ff">8007</span>) { <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Line: &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">line</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;\n\n&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">e</span>,<span style="color:#e6db74">&#34;Bug!&#34;</span>,<span style="color:#66d9ef">true</span>); <span style="color:#66d9ef">throw</span>(<span style="color:#a6e22e">e</span>); } }
+    }
+)();
+ }
+
+</code></pre></div><p>这时候， 在ps程序中就可以看到工具切换到矩形工具了</p>
+<p>那其他工具要怎么才能切换呢</p>
+<p><img src="../../blogimage/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0ps%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7/1963286154e34d52ad85b7d94d3b524c.png" alt="" title="效果"></p>
+<p>可以根据ps中的对应命令来更换工具代码，这样就可以实现工具的切换选择</p>
+<p>如果找不到对应的代码可以用监听器对ps进行监听，找到对应的工具id也是可以实现的</p>
+<p>通过ps官方监听器</p>
+<p><img src="../../blogimage/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0ps%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7/127dc3bf57ce4ab3ab2d9959422e1820.png" alt="" title="效果"></p>
+<p>或者</p>
+<p><img src="../../blogimage/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0ps%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7/bfe4bd524fa14187b6ee2a098332f544.png" alt="" title="效果"></p>
+<p>都可以对ps中的命令进行监听，并反馈</p>
+<h3 id="ps中的命令可以查看这篇文档">Ps中的命令可以查看这篇文档</h3>
+<p><a href="https://gitee.com/code_yu/photoshop-javascript#layercomps-layercomps"> <!-- raw HTML omitted --> 点击跳转 https://gitee.com/code_yu/photoshop-javascript#layercomps-layercomps <!-- raw HTML omitted --></a></p>
+<p>如果想要制作一个在ps中切换工具的cep扩展插件应该怎么做</p>
+<p>可以按照上面的ps扩展插件教程里的代码写一个切换小工具</p>
+<p>比如</p>
+<h3 id="html代码">html代码</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button-creat&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;creat()&#34;</span>&gt;&lt;/<span style="color:#f92672">button</span>&gt;
+</code></pre></div><h3 id="js代码">Js代码</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">creat</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+    	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">CSInterface</span>();
+    	<span style="color:#a6e22e">cs</span>.<span style="color:#a6e22e">evalScript</span>(<span style="color:#e6db74">&#34;creatrectangle()&#34;</span>);
+    }
+</code></pre></div><p>再配置好相关的路径</p>
+<p>这样就可以自己在ps中构建一个简易的切换工具栏小扩展工具了。</p>
+
+        </div> 
+        </div>
+        </div>
+        <div >
+            <img  id="blog-detail-top" src="../../image/icon/arrow.png" onclick="backtop()">
+        </div>
+        
+
+    </div>
+</div>
+<script>
+    function back(){
+        window.location.href = "../";
+    }
+    
+    var top = document.getElementById("blog-detail-top");
+    top.onclick = function (){
+        $(document).ready(function(){
+		$(".blog-text").animate({scrollTop:0},500);
+    });
+};
+    
+</script>
+</body>
+</html>

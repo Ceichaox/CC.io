@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" sizes="any" mask="" href="../../image/icon/icon-b.png" >
+    <title>C</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../css/blog.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body >
+    
+    
+
+    
+    <div >
+        
+        
+        <div >
+        <button id="blog-detail-backbutton" onclick="back()">back</button>
+        <img  id="blog-blog" src="../../image/icon/blog-blog.png">
+        <img  id="blog-warnningline" src="../../image/icon/warnning-line.png">
+        </div>
+        <div class="blog-hidden">
+        <div class="blog-text">
+        <h2 class="blog-text-title">TEST-用css实现矩形扩散动画效果制作一个简约科技按钮</h2>
+        <br>
+        <div class="blog-text-text"><p>测试目的：用css实现矩形扩散动画效果简单实现一个简约科技按钮</p>
+<p>前几天在网上找漂亮的功能组件时看见有人用css实现圆形的具有波纹扩散动画效果的按钮，效果挺好看的，但是作为设计作者觉得矩形的过渡棱角科技感更饱满一些，所以作者借助这种思路用css简单的实现了一个矩形扩散的按钮运用在自己的项目中，顺便拿出来分享一下思路。</p>
+<p>解决对象是<!-- raw HTML omitted -->按下的前后的一个动画的变化效果</p>
+<p>当按钮按下时光环会从贴近按钮的边缘向外扩散，然后消失，给人一种科技波纹的效果</p>
+<p>这里附上代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">
+.<span style="color:#a6e22e">button</span> {
+ 
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>;
+ 
+  <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#ae81ff">45</span><span style="color:#66d9ef">deg</span>,<span style="color:#ae81ff">#00eaff</span>,<span style="color:#ae81ff">#006aff</span>) ;
+ 
+  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+ 
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">none</span>;
+ 
+  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+ 
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+ 
+  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">234</span>, <span style="color:#ae81ff">250</span>, <span style="color:#ae81ff">0.5</span>);
+ 
+  <span style="color:#66d9ef">outline</span>: <span style="color:#ae81ff">0</span>;
+ 
+}
+ 
+.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">active</span> {
+ 
+  <span style="color:#66d9ef">transform</span>: scale(<span style="color:#ae81ff">0.95</span>);
+ 
+  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">234</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.5</span>);
+ 
+}
+ 
+.<span style="color:#a6e22e">button</span>::<span style="color:#a6e22e">before</span>{
+ 
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">45</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">45</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">234</span>, <span style="color:#ae81ff">250</span>, <span style="color:#ae81ff">0.5</span>);
+ 
+  <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">absolute</span>;
+ 
+  <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">-1</span>;
+ 
+  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#39;&#39;</span>;
+ 
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+ 
+  <span style="color:#66d9ef">animation</span>: bubble  <span style="color:#ae81ff">0.75</span><span style="color:#66d9ef">s</span> ;
+ 
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation</span>: bubble  <span style="color:#ae81ff">0.75</span><span style="color:#66d9ef">s</span> ;
+ 
+}
+ 
+.<span style="color:#a6e22e">button</span>:<span style="color:#a6e22e">active</span>::<span style="color:#a6e22e">before</span> {
+ 
+  <span style="color:#66d9ef">animation</span>: <span style="color:#66d9ef">none</span>;
+ 
+}
+ 
+@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">bubble</span> {
+ 
+  <span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
+ 
+  <span style="color:#66d9ef">transform</span>: scale(<span style="color:#ae81ff">1.5</span>) ;
+ 
+  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>; 
+ 
+  }
+ 
+}
+ 
+</code></pre></div><p>测试效果：<a href="https://codepen.io/tt1500891331/pen/dyRgBGy">https://codepen.io/tt1500891331/pen/dyRgBGy</a></p>
+<p><img src="../../blogimage/TEST-%E7%94%A8css%E5%AE%9E%E7%8E%B0%E7%9F%A9%E5%BD%A2%E6%89%A9%E6%95%A3%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E7%BA%A6%E7%A7%91%E6%8A%80%E6%8C%89%E9%92%AE/2021092610163449.png" alt="" title="测试效果"></p>
+<p>目前这个按钮功能已经实现，但是还存在一个问题是当页面加载或是重新刷新的时候，动画会走一遍，如果有大佬阅读本文章请帮忙在留言下回复一下，有没有在不使用js的前提下靠css的本身能够让他在加载或刷新过程中跳过动画过渡呢</p>
+
+        </div> 
+        </div>
+        </div>
+        <div >
+            <img  id="blog-detail-top" src="../../image/icon/arrow.png" onclick="backtop()">
+        </div>
+        
+
+    </div>
+</div>
+<script>
+    function back(){
+        window.location.href = "../";
+    }
+    
+    var top = document.getElementById("blog-detail-top");
+    top.onclick = function (){
+        $(document).ready(function(){
+		$(".blog-text").animate({scrollTop:0},500);
+    });
+};
+    
+</script>
+</body>
+</html>

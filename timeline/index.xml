@@ -13,8 +13,8 @@
       <pubDate>Thu, 06 Jan 2022 15:44:53 +0800</pubDate>
       
       <guid>/timeline/myself/</guid>
-      <description>2020-07-07 ceichaos
-2022-01-05 有人</description>
+      <description>2021-12-08 博客构建基本构建完成
+2022-01-15 整理修正了一些hugo博客的bug，解决分页问题，hugo本身分页逻辑需要重加载，评论需要集成插件，搜索功能暂时要借助其他页内插件，寻找集成到一起的方法</description>
     </item>
     
   </channel>
