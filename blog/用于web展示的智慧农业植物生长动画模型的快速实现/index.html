@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" sizes="any" mask="" href="../../image/icon/icon-b.png" >
+    <title>C</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../css/blog.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body >
+    
+    
+
+    
+    <div >
+        
+        
+        <div >
+        <button id="blog-detail-backbutton" onclick="back()">back</button>
+        <img  id="blog-blog" src="../../image/icon/blog-blog.png">
+        <img  id="blog-warnningline" src="../../image/icon/warnning-line.png">
+        </div>
+        <div class="blog-hidden">
+        <div class="blog-text">
+        <h2 class="blog-text-title">用于web展示的智慧农业植物生长动画模型的快速实现</h2>
+        <br>
+        <div class="blog-text-text"><p>在下最近在进行智慧农业的项目过程中对有关植物生长的动画模型做了一番研究，最后把植物生长的过程在web页面进行展示，并进行控制，实现项目需求主要使用的工具是c4d和unity</p>
+<p>先来解析一下植物生长动画模型的难点，首先植物生长动画是区别于其他几种模型动画的，常见的几种分类动画：</p>
+<p>骨骼动画一般是完整模型加以绑定骨骼特征，然后通过控制骨骼对包括人物或其他事物模型进行运动模拟处理，从而形成动画，使人物动起来，类似mmd这种</p>
+<p>粒子动画是通过粒子发生器生成粒子并进行一定的处理，从而把无形物变为有形物使之运动，生成动画，类似特效火，风，雷电，水都可以用粒子来生成粒子动画实现</p>
+<p>运动动画是比较简单的动画，通过物体进行控制缩放，平移，旋转，透明等等特征操作，实现物体的运动，类似发动机动画就是通过齿轮传动运动来模拟进行动画演示</p>
+<p>而植物生长动画总体来说其实是一种比较特殊的动画实现，他的实现方式更趋近于多边形（面或物体）随时间轴运动进行特征形变，且从时间轴的开始到结束，形变几乎是一直存在的</p>
+<p>我们都知道几乎极大多数的生物都遵循类似这样的一条s生长曲线</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/732b178b8575409c8b1d13ac531e7f37.png" alt="" title="效果"></p>
+<p>因此，我们借助这种曲线来对植物生长进行模拟</p>
+<p>其实对于实现植物生长动画还有一些其他的方式可以实现，但在下是通过c4d来进行实现的</p>
+<p>众所周知，c4d有一款非常好用的植物模型插件forester，专门用于影视中植物的制作，功能性堪比专门用于游戏引擎植物建模的软件speedtree</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/d79e234f22ac473e840e5846b040240b.png" alt="" title="效果"></p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/8102efc61d48425493b0ef85c38f892a.png" alt="" title="效果"></p>
+<p>他的库里有很多预设的模型</p>
+<p>这里要说明一下，如果你的c4d使用的是中文，这个插件的自带的材质是加载不出来的，切换成英文可以正常显示，但是最好是用他自带的灰模，然后自己做材质，因为他自带的材质有一些问题，表现上也达不到想要的要求，所以最好用它的灰模自己附材质文件</p>
+<p>这里还要说明一下，他的实现方式连接的，什么意思呢，没接触过这个插件的同学可能不知道，以小麦为例，就是艹是可以没有的，但是果实必须链接到穗，穗必须链接到茎，你想要单做果实生长的模型动画的话需要把连接的穗和茎缩小到最小才可以</p>
+<p>另外这个插件控制的是模型的预设值，如果想要近景镜头可能模型达不到你想要的要求，那你就只能用植物工厂或者高级建模工具一点点建了，我使用c4d就是因为这一套植物生长动画模型做下来是相当快的（因为有预设）</p>
+<p>然后调整插件，控制植物生长调控grow global（全局生长），设定好时间轴，打好关键帧</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/ae3bfac7ebd74c12acd3897f5aa780d3.png" alt="" title="效果"></p>
+<p>然后调控好植物生长的动画，进行预览</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/395984e5029d4fe2b14a46ae6609a0a3.gif" alt="" title="效果"></p>
+<p>各方面完成后，导出.abc文件</p>
+<p>众所周知，untiy是一款相当强大的软件，而里面的官方abc格式插件能对abc动画进行控制和处理，</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/d22d0f652fdc4ed7b35bcbec558b432d.png" alt="" title="效果"></p>
+<p>首先确保你的unity里加载了alembic插件</p>
+<p>新建一个new timeline</p>
+<p>添加alembic track</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/c9e17d75e1c943f48b2b0a0f05c8e229.png" alt="" title="效果"></p>
+<p>然后把你的abc模型动画直接绑到时间轴上</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/a68176b91e6d491dae4eb55ee4bc9be3.png" alt="" title="效果"></p>
+<p>更改scale，c4d导出abc的时候默认的是1，在unity里看不到的话需要放大</p>
+<p>拉长动画区域，调整时间节点，确保在unity里能看到生长动画</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/6dce2d9b40d9427593613b729d727d0f.png" alt="" title="效果"></p>
+<p>然后从c4d里把你做好的材质导出（因为unity加载abc是不带材质的），然后把材质绑到模型上预览</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/a9761b509f814934858b462af224fbee.gif" alt="" title="效果"></p>
+<p>需要注意的是如果你想要把模型精细化，更加详细的体现作物生长，你需要把建模在c4d里拆成多个部分，建立多个生长动画，并合成一个abc，或者导出多个abc在unity里整合都可以，这样可以保证每个模型部分都有单独的材质和模型生长动画，如果只是想快速出图，只要简单的部分就可以，那只需要在unity里把模型附加简单的材质就可以导出进行web展示了</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/02dac9014ce042e8897f70fadec06fc6.png" alt="" title="效果"></p>
+<p>建议把模型动画差分成多个动画，再放到untiy里整合，因为插件的问题，整合为一个abc的话untiy有识别不了多边形的情况</p>
+<p><img src="../../blogimage/%E7%94%A8%E4%BA%8Eweb%E5%B1%95%E7%A4%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0/413276866f0d4d89a307000dcf17caeb.png" alt="" title="效果"></p>
+<h3 id="个人用插件传送门">个人用插件传送门</h3>
+<p><a href="https://download.csdn.net/download/Cei_Chaos/60839976">  点击跳转 https://download.csdn.net/download/Cei_Chaos/60839976 </a></p>
+
+        </div> 
+        </div>
+        </div>
+        <div >
+            <img  id="blog-detail-top" src="../../image/icon/arrow.png" onclick="backtop()">
+        </div>
+        
+
+    </div>
+</div>
+<script>
+    function back(){
+        window.location.href = "../";
+    }
+    
+    var top = document.getElementById("blog-detail-top");
+    top.onclick = function (){
+        $(document).ready(function(){
+		$(".blog-text").animate({scrollTop:0},500);
+    });
+};
+    
+</script>
+</body>
+</html>

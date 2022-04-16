@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" sizes="any" mask="" href="../../image/icon/icon-b.png" >
+    <title>C</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../css/blog.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body >
+    
+    
+
+    
+    <div >
+        
+        
+        <div >
+        <button id="blog-detail-backbutton" onclick="back()">back</button>
+        <img  id="blog-blog" src="../../image/icon/blog-blog.png">
+        <img  id="blog-warnningline" src="../../image/icon/warnning-line.png">
+        </div>
+        <div class="blog-hidden">
+        <div class="blog-text">
+        <h2 class="blog-text-title">设计/前端 关于AE动画/特效web实现的四种方法</h2>
+        <br>
+        <div class="blog-text-text"><h3 id="1通过动图视频来实现">1.通过动图/视频来实现</h3>
+<p>如果你是设计师，并且熟练的运用Photoshop，那你一定对混合图层非常熟悉，他是实现两种图层消除颜色差值的一种快速实现方法，当然在web网页上也存在像Photoshop中的图层逻辑和混合模式，通过css代码可以实现网页中的图片和文字、视频等元素的图层堆叠，你可以把一种元素放置到另一种元素的上方，并且可以调节混合模式blend-mode来做到和Photoshop的混合图层一样的效果，通过这种方式，我们可以通过ae来制作合适的特效或动画效果，把我们所制作的效果放到网页当中，通过混合模式来消除ae所生成的颜色背景，从而达到与网页背景相融合，实现网页特效的目的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS">
+<span style="color:#f92672">mix-blend-mode</span>:<span style="color:#a6e22e">screen</span>
+
+</code></pre></div><p><img src="../../blogimage/%E8%AE%BE%E8%AE%A1%E5%89%8D%E7%AB%AF%E5%85%B3%E4%BA%8EAE%E5%8A%A8%E7%94%BB%E7%89%B9%E6%95%88web%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/548a02d650c54c00b8950019a238223c.png" alt="" title="效果"></p>
+<p>Ae所生成的动画特效都是附带颜色背景的，无论是动图gif还是视频，网所以页设计者在进行这种实现的时候，往往一开始要进行合理的具体规划，保证ae动画特效的背景颜色与网页主体颜色保持一直或相近，才能达到完美消除底色。</p>
+<p>但鉴于网页中的混合模式相比于Photoshop的混合方式要少，尤其是当如果出现两种颜色差距较大背景在网页中切换时，覆盖在之上的动画特效往往会出现底色，与原有的颜色形成不协调的色差，导致明显的感官差异，因此在使用视频和动图特效过程中，网页的整体颜色协调和网页的交互模式都需要提前应对处理和规划。</p>
+<p><img src="../../blogimage/%E8%AE%BE%E8%AE%A1%E5%89%8D%E7%AB%AF%E5%85%B3%E4%BA%8EAE%E5%8A%A8%E7%94%BB%E7%89%B9%E6%95%88web%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/dad7314664134ad187c1c621e772f1c5.png" alt="" title="效果"></p>
+<p>抛开各种格式的视频，Gif动图本身也存在一定的缺陷，无法实现透明过渡，色彩表现清晰度也比较低。</p>
+<p>AE在生成包括MP4的各种视频格式时，往往自身的设置属性无法达到，所以经常通过ME进行各种视频的详细调整和导出，其中AVI格式的视频，可以通过携带alpha通道导出，在导入Photoshop时，会自动生成无背景视频，但在网页使用过程中，鉴于视频播放器的问题，总会生成一层默认黑色背景，当网页加载AVI时也要通过其他的插件支持，导致本身并不能进行透明背景的输出，背景必然存在。</p>
+<h3 id="2通过json数据svga来实现">2.通过json数据/svga来实现</h3>
+<p>通过数据的方式实现动画和特效，关于AE通过插件导出json和svga数据，两者基本一样，都需要通过绑定js来进行加载实现，都可以把图层信息转换成数据进行储存，再通过加载器来进行动画特效的播放和控制。</p>
+<p>AE中有专门的对应json和svga格式的导出插件，通过设置导出，把ae中的图层信息和动画信息转化成文本数据，再通过调用Lottie.js和svga.js就可以再网页当中实现无背景存在的特效和动画。</p>
+<p>这里着重说明一下在下使用Lottie.js，可以通过设置导出带有图片的文件和json代码，并在网页中进行调用，也可以直接包含图形信息到数据，只生成json文件，直接调用一个json就可以实现，甚至可以直接生成html和css源代码，只用纯css和html就能完成动画特效的实现。</p>
+<p><img src="../../blogimage/%E8%AE%BE%E8%AE%A1%E5%89%8D%E7%AB%AF%E5%85%B3%E4%BA%8EAE%E5%8A%A8%E7%94%BB%E7%89%B9%E6%95%88web%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/3c8eb0c6f92e47868bcc011e95ccb112.png" alt="" title="效果"></p>
+<p>可以加载alpha通道，表明可以实现动画特效的颜色背景输出和无背景动画输出，因为可以转换信息到数据，因此json文件需要自带的json播放器才能查看导出效果，或者直接加载到网页当中也可以观看导出效果。</p>
+<p><img src="../../blogimage/%E8%AE%BE%E8%AE%A1%E5%89%8D%E7%AB%AF%E5%85%B3%E4%BA%8EAE%E5%8A%A8%E7%94%BB%E7%89%B9%E6%95%88web%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/f92ebeb41bb349a5a54f77050cbb718e.png" alt="" title="效果"></p>
+<p>关于压缩方面，视频和动图可以用合适的工具进行相应的格式压缩，数据文件则要压缩调整好后进行生成，要在生成动画效果后调整好大小，清晰度等参数，再通过插件进行导出json文件，这样才能控制好动效数据的大小，没有办法进行后期对json数据进行压缩。</p>
+<h3 id="3apngwebp新图片格式">3.APNG/WebP新图片格式</h3>
+<p>通过新型的的图片格式生成透明背景的动画特效，近几年兴起的新型图片格式，在原先的图片格式上可以进行时间轴播放，支持alpha通道，透明和渐变过渡，老式图片格式的升级版，经过几年的发展，在浏览器的兼容性上已经适配了不少的主流浏览器，但无论那种新图片格式，相比于其他动效实现方式在网页上的兼容性还是表现的差一些。</p>
+<p>兼容问题参考此篇文档</p>
+<p><a href="https://blog.csdn.net/weixin_44369568/article/details/101458255">  点击跳转 https://blog.csdn.net/weixin_44369568/article/details/101458255 </a></p>
+<p>在下只使用过APNG，WebP没用过，所以不做说明，网页特效可以通过AE制作，并生成png序列帧或iff等带有alpha透明序列帧，再通过isparta工具把序列帧导出为APNG动图，或通过其他方式转化成APNG，也可以生成无背景的动画特效。</p>
+<p><img src="../../blogimage/%E8%AE%BE%E8%AE%A1%E5%89%8D%E7%AB%AF%E5%85%B3%E4%BA%8EAE%E5%8A%A8%E7%94%BB%E7%89%B9%E6%95%88web%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/b3a5983f8ac04ed3a208b3e04fe00409.png" alt="" title="效果"></p>
+<p>关于APNG的生成，Isparta工具不怎么好用，会报错和卡死，维护也相当弱，工具存在bug问题，（明明生成报错失败了，文件下还是会生成带有isparta后缀的APNG，可以正常播放和使用，gif选项导出不了等）APNG格式相当于是整个png动画序列通过Photoshop加入时间轴调整后，再进行整合的一个文件包格式，体积是整个png序列，甚至更大。</p>
+<p>压缩相对困难，除去ispata自带的压缩工具，其他没有对应的兼容工具可以使用，如果要进行压缩，只能像数据格式一样，需要先对png序列进行处理，压缩和调整，在进行生成。</p>
+<h3 id="4cssjs纯代码实现">4.Css/Js纯代码实现</h3>
+<p>按照设计者制作的ae特效演示用纯代码实现，通过css和js代码进行动画特效的实现，二维动画的实现有animation.js等，三维的动画实现有three.js等，还有都两者沾一点的echarts.js和echarts-gl.js。</p>
+<p>可以直接通过代码的方式直接生成，也可以通过把AE动画拆分成对应的动画组件或者图片，通过css进行时间移动，透明度变换等，将动画进行组合，从而生成动画特效，效果实现代码和逻辑比较复杂，需要经过大量调整，控制度最高，代码可调节。</p>
+<p>其中threejs的使用生成会带有颜色场景和灯光，同动图一样，使用前需要对网页的交互效果实现进行规划，防止出现过渡色差的那种不协调感</p>
+<p><img src="../../blogimage/%E8%AE%BE%E8%AE%A1%E5%89%8D%E7%AB%AF%E5%85%B3%E4%BA%8EAE%E5%8A%A8%E7%94%BB%E7%89%B9%E6%95%88web%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/5bdf2930fd3f43f1ac896444c406e8d0.png" alt="" title="效果"></p>
+<h3 id="体积比较">体积比较</h3>
+<p><img src="../../blogimage/%E8%AE%BE%E8%AE%A1%E5%89%8D%E7%AB%AF%E5%85%B3%E4%BA%8EAE%E5%8A%A8%E7%94%BB%E7%89%B9%E6%95%88web%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/f8c02367eec04cd9839616c137718b71.png" alt="" title="效果"></p>
+
+        </div> 
+        </div>
+        </div>
+        <div >
+            <img  id="blog-detail-top" src="../../image/icon/arrow.png" onclick="backtop()">
+        </div>
+        
+
+    </div>
+</div>
+<script>
+    function back(){
+        window.location.href = "../";
+    }
+    
+    var top = document.getElementById("blog-detail-top");
+    top.onclick = function (){
+        $(document).ready(function(){
+		$(".blog-text").animate({scrollTop:0},500);
+    });
+};
+    
+</script>
+</body>
+</html>
