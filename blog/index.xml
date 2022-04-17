@@ -8,39 +8,75 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Jan 2022 09:45:52 +0800</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>post</title>
-      <link>/blog/blog5/</link>
+      <title>Hugo个人博客设计</title>
+      <link>/blog/hugo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
       
-      <guid>/blog/blog5/</guid>
-      <description>1231 123</description>
+      <guid>/blog/hugo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/</guid>
+      <description>鸽了好久的个人博客，今天个人博客1.0终于正式完工上线了，采用了hugo搭建工具，自己设计并开发的个人科技风格主题和博客系统功能，也是踩了无数的坑，修复了n多的bug，不过总算完成了（分辨率和浏览器适配制作了一部分），尽管由于博客构建工具的限制，现在这款主题还不完善，适配和功能性都没达到最初理想的那个程度，但是作为初版个人用的博客已经非常不错了，所以拿出来交流分享一下，借此共同学习共同进步
+设计尺寸：1920*1080 介绍页 博客demo体验地址： 点击跳转 https://ceichaox.github.io/CC.io/ 
+主题开源地址-GitHub： 点击跳转 https://github.com/Ceichaox/hugo-theme-CC 
+使用手册：
+直接使用主题包内的-config中的代码替换hugo原本的config进行设置
+1.代码开源
+2.Apache许可
+3.使用代码请注明原作者
+4.建议使用谷歌浏览器进行浏览，最后请大家多多支持</description>
     </item>
     
     <item>
-      <title>post</title>
-      <link>/blog/blog6/</link>
+      <title>Hugo博客个性化主题开发踩坑记录（一）</title>
+      <link>/blog/hugo%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%9D%91%E8%AE%B0%E5%BD%951/</link>
       <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
       
-      <guid>/blog/blog6/</guid>
-      <description>1231 123</description>
+      <guid>/blog/hugo%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%9D%91%E8%AE%B0%E5%BD%951/</guid>
+      <description>个性化博客主题开坑记录，哎嘿(๑•̀ㅂ•́)و✧
+博文分类
+分页面进行展示
+新建空白主题
+主题下，模板分类存放
+文件夹下再分类
+创建文章
+设置博文归属
+title: &amp;#34;blog1&amp;#34; date: 2022-01-06T15:44:53+08:00 draft: false series: blog 列表页模板对应博文文件夹名称
+单页文章模板使用默认名称
+Config.Toml里主页路径配置
+[menu] name=&amp;#34;首页&amp;#34; url=&amp;#34;/&amp;#34; weight=&amp;#34;1&amp;#34; [[menu.main]] name=&amp;#34;工作&amp;#34; url=&amp;#34;/work/&amp;#34; weight=&amp;#34;2&amp;#34; [[menu.main]] name=&amp;#34;博文&amp;#34; url=&amp;#34;/blog/&amp;#34; weight=&amp;#34;3&amp;#34; 分类配置
+# Project series [params.project] # MMD series [params.mmd] # blog series [params.blog] 输出
+[outputs] home = [&amp;#34;HTML&amp;#34;, &amp;#34;RSS&amp;#34;, &amp;#34;JSON&amp;#34;] 主页
+检索blog相关文件夹下内容，并跳转
+&amp;lt;h1&amp;gt; Page &amp;lt;/h1&amp;gt; {{ range where .Pages &amp;#34;Section&amp;#34; &amp;#34;blog&amp;#34; }} &amp;lt;div&amp;gt; &amp;lt;a href=&amp;#34;{{.Permalink}}&amp;#34;&amp;gt;{{.Title}}&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; {{ end }} 列表页</description>
     </item>
     
     <item>
-      <title>post</title>
-      <link>/blog/blog7/</link>
+      <title>Hugo博客个性化主题开发踩坑记录（二）</title>
+      <link>/blog/hugo%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%9D%91%E8%AE%B0%E5%BD%952/</link>
       <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
       
-      <guid>/blog/blog7/</guid>
-      <description>1231 123</description>
+      <guid>/blog/hugo%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%9D%91%E8%AE%B0%E5%BD%952/</guid>
+      <description>实现threejs做的一个有趣的旋转小特效 创建球体并设置地球纹理
+//earth  var earthgeometry = new THREE.SphereGeometry(100,100,100); var texture = new THREE.TextureLoader().load( &amp;#39;./image/ditu6.png&amp;#39; ); var earthmaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, // 设置颜色纹理贴图：Texture对象作为材质map属性的属性值  map: texture, side: THREE.DoubleSide, transparent: true, }); var earth = new THREE.Mesh(earthgeometry, earthmaterial); scene.add(earth); 创建旋转函数
+function rotatequest(){ setInterval(function (){ var sk = document.getElementById(&amp;#39;test&amp;#39;).scrollTop; //绑定对应id元素滑动像素值  var rk = 0.05;//设定滑动速率  earth.rotation.set(0,rk*sk,0);//绕y轴旋转  renderer.render(scene, camera); } ,30); //调用旋转函数
+rotatequest(); 看下效果 </description>
     </item>
     
     <item>
-      <title>post</title>
-      <link>/blog/blog8/</link>
+      <title>Photoshop CEP扩展倒角插件</title>
+      <link>/blog/photoshopcep%E6%89%A9%E5%B1%95%E5%80%92%E8%A7%92%E6%8F%92%E4%BB%B6/</link>
       <pubDate>Fri, 07 Jan 2022 09:45:52 +0800</pubDate>
       
-      <guid>/blog/blog8/</guid>
-      <description>1231 123</description>
+      <guid>/blog/photoshopcep%E6%89%A9%E5%B1%95%E5%80%92%E8%A7%92%E6%8F%92%E4%BB%B6/</guid>
+      <description>还在为怎么制作炫酷的可视化作品发愁么？
+如果你想要制作更有科技感的作品，不妨试试这款插件吧！ 他能帮助你快速实现倒角，提高你的工作效率
+个人写的工作用ps扩展插件，需要的同学取用随意
+Photoshop Cep 扩展开源插件，基于conner editor 进行cep环境移植，修改了部分逻辑和算法，优化了界面表现
+使用方法 将压缩包解压后放入以下路径C:\Program Files (x86)\Common Files\Adobe\CEP\extensions
+重启ps，从窗口&amp;gt;扩展中打开
+！！！！因为此插件并未进行ps正规的签名打包
+因此插件出现未签署报错情况请查看此篇文档
+点击跳转 https://www.didixk.com/6748.html 
+项目开源地址： 点击跳转 https://gitee.com/Ceichaos/Corner-tool 
+本插件免费开源，支持一下吧</description>
     </item>
     
     <item>

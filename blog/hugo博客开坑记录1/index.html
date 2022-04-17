@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" sizes="any" mask="" href="../../image/icon/icon-b.png" >
+    <title>C</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../css/blog.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body >
+    
+    
+
+    
+    <div >
+        
+        
+        <div >
+        <button id="blog-detail-backbutton" onclick="back()">back</button>
+        <img  id="blog-blog" src="../../image/icon/blog-blog.png">
+        <img  id="blog-warnningline" src="../../image/icon/warnning-line.png">
+        </div>
+        <div class="blog-hidden">
+        <div class="blog-text">
+        <h2 class="blog-text-title">Hugo博客个性化主题开发踩坑记录（一）</h2>
+        <br>
+        <div class="blog-text-text"><p>个性化博客主题开坑记录，哎嘿(๑•̀ㅂ•́)و✧</p>
+<p>博文分类</p>
+<p>分页面进行展示</p>
+<p><img src="../../blogimage/Hugo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/c0946ff0bace45aa88262f1134d86fc2.png" alt="" title="效果"></p>
+<p>新建空白主题</p>
+<p><img src="../../blogimage/Hugo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/36b4b90b2f4b44aaa56df148ec86119b.png" alt="" title="效果"></p>
+<p>主题下，模板分类存放</p>
+<p><img src="../../blogimage/Hugo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/7f8e59d9e2fc4c79ab847adddfa2cbf8.png" alt="" title="效果"></p>
+<p>文件夹下再分类</p>
+<p><img src="../../blogimage/Hugo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/aa311af998b84b02bfa3084cc9fb07aa.png" alt="" title="效果"></p>
+<p>创建文章</p>
+<p><img src="../../blogimage/Hugo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/945509f59acd46efb8825d86348d7905.png" alt="" title="效果"></p>
+<p>设置博文归属</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;blog1&#34;</span>
+<span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2022</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">06</span><span style="color:#a6e22e">T15</span><span style="color:#f92672">:</span><span style="color:#ae81ff">44</span><span style="color:#f92672">:</span><span style="color:#ae81ff">53</span><span style="color:#f92672">+</span><span style="color:#ae81ff">08</span><span style="color:#f92672">:</span><span style="color:#ae81ff">00</span>
+<span style="color:#a6e22e">draft</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+<span style="color:#a6e22e">series</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">blog</span>
+</code></pre></div><p>列表页模板对应博文文件夹名称</p>
+<p><img src="../../blogimage/Hugo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/b2b290c8c84b42259fb5b3d1b4514405.png" alt="" title="效果"></p>
+<p>单页文章模板使用默认名称</p>
+<p><img src="../../blogimage/Hugo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/4a160e6b0f594c268883fb4a461d02ec.png" alt="" title="效果"></p>
+<p>Config.Toml里主页路径配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-t" data-lang="t">  [menu]
+  name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;首页&#34;</span>
+  url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>
+  weight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>
+  [[menu<span style="color:#f92672">.</span>main]]
+  name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;工作&#34;</span>
+  url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/work/&#34;</span>
+  weight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>
+  [[menu<span style="color:#f92672">.</span>main]]
+  name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;博文&#34;</span>
+  url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/blog/&#34;</span>
+  weight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span>
+</code></pre></div><p>分类配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-t" data-lang="t"><span style="color:#75715e"># Project series</span>
+  [params<span style="color:#f92672">.</span>project]
+ 
+<span style="color:#75715e"># MMD series</span>
+  [params<span style="color:#f92672">.</span>mmd]
+ 
+<span style="color:#75715e"># blog series</span>
+  [params<span style="color:#f92672">.</span>blog]
+</code></pre></div><p>输出</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-t" data-lang="t">[outputs]
+home <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;RSS&#34;</span>, <span style="color:#e6db74">&#34;JSON&#34;</span>]
+</code></pre></div><p>主页</p>
+<p>检索blog相关文件夹下内容，并跳转</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h1</span>&gt; Page &lt;/<span style="color:#f92672">h1</span>&gt;
+        {{ range where .Pages &#34;Section&#34; &#34;blog&#34; }}
+        &lt;<span style="color:#f92672">div</span>&gt;
+            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Permalink}}&#34;</span>&gt;{{.Title}}&lt;/<span style="color:#f92672">a</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+        {{ end }}
+</code></pre></div><p>列表页</p>
+<p>建立盒子</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-workarea-hidden&#34;</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-workarea&#34;</span>&gt;
+            <span style="color:#75715e">&lt;!-- 隐藏滑动栏并在字数过多时允许滑动 --&gt;</span>
+ 
+            {{ $paginator := .Paginate  (where .Data.Pages &#34;Params.series&#34; &#34;blog&#34;) }}
+<span style="color:#75715e">&lt;!-- 检索blog分类下文章展示 --&gt;</span>
+ 
+            {{ range $paginator.Pages }}
+            
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-apart&#34;</span>&gt;
+            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Permalink}}&#34;</span>&gt;&lt;<span style="color:#f92672">img</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-img&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../../../image/icon/blog-img.png&#34;</span> &gt;
+         &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-text&#34;</span>&gt;
+             &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-title&#34;</span>&gt;
+                {{.Title}}
+                <span style="color:#75715e">&lt;!-- 输出标题 --&gt;</span>
+ 
+             &lt;/<span style="color:#f92672">div</span>&gt;
+             &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-content&#34;</span>&gt;
+                {{  .Content | safeHTML | truncate 100 }}
+<span style="color:#75715e">&lt;!-- 输出内容，限制100字以内 --&gt;</span>
+ 
+             &lt;/<span style="color:#f92672">div</span>&gt;
+         &lt;/<span style="color:#f92672">div</span>&gt;
+ 
+         
+        &lt;/<span style="color:#f92672">a</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+        {{ end }}
+ 
+ 
+        &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>返回上级功能</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">back</span>(){
+            window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;../&#34;</span>;
+        }  
+</code></pre></div><p>内容页</p>
+<p>文章缓慢滑动返回顶部</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">引入jQuery</span> <span style="color:#f92672">--&gt;</span>
+ 
+ <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">top</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;blog-detail-top&#34;</span>);
+    <span style="color:#a6e22e">top</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (){
+        <span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>(){
+        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.blog-text&#34;</span>).<span style="color:#a6e22e">animate</span>({<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>},<span style="color:#ae81ff">500</span>);
+    });
+};
+</code></pre></div>
+        </div> 
+        </div>
+        </div>
+        <div >
+            <img  id="blog-detail-top" src="../../image/icon/arrow.png" onclick="backtop()">
+        </div>
+        
+
+    </div>
+</div>
+<script>
+    function back(){
+        window.location.href = "../";
+    }
+    
+    var top = document.getElementById("blog-detail-top");
+    top.onclick = function (){
+        $(document).ready(function(){
+		$(".blog-text").animate({scrollTop:0},500);
+    });
+};
+    
+</script>
+</body>
+</html>
